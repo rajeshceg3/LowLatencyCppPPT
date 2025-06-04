@@ -1,0 +1,164 @@
+/* styles/index.css */
+
+/* --- Theme Overrides & Base Styling --- */
+/* Apply a consistent dark background if not default in Seriph.
+   The Seriph theme might already provide a good dark base.
+   These are examples if further customization is needed. */
+/*
+body, .slidev-layout {
+  background-color: #121212; /* A common very dark background */
+  color: #e0e0e0;           /* Light text for dark background */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #f5f5f5; /* Slightly brighter for headers */
+}
+*/
+
+/* --- Neon Accents --- */
+/* Define neon colors (cyan, purple, green) that can be used for text, borders, icons etc. */
+:root {
+  --neon-cyan: #00ffff;
+  --neon-purple: #c000ff; /* Adjusted purple for better visibility if #ff00ff is too harsh */
+  --neon-green: #39ff14;  /* A vibrant neon green */
+  --neon-pink: #ff007f;
+  --neon-orange: #ff8c00;
+  --neon-blue: #007FFF; /* A bright, clear blue */
+
+
+  /* Text shadow for neon glow effect - apply sparingly as it can be performance intensive */
+  --neon-text-shadow-cyan: 0 0 5px var(--neon-cyan), 0 0 10px var(--neon-cyan), 0 0 15px var(--neon-cyan);
+  --neon-text-shadow-purple: 0 0 5px var(--neon-purple), 0 0 10px var(--neon-purple), 0 0 15px var(--neon-purple);
+  --neon-text-shadow-green: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green), 0 0 15px var(--neon-green);
+}
+
+/* Example usage:
+.neon-text-cyan {
+  color: var(--neon-cyan);
+  text-shadow: var(--neon-text-shadow-cyan);
+}
+.neon-border-purple {
+  border: 2px solid var(--neon-purple);
+  box-shadow: 0 0 10px var(--neon-purple);
+}
+
+h1, h2 { /* Potentially apply a default neon accent to main headers, e.g., bottom border */
+  /* border-bottom: 2px solid var(--neon-cyan); */
+  /* padding-bottom: 0.3em; */
+}
+*/
+
+/* --- Glassmorphism Effects --- */
+/* Example for a glassmorphic card or callout box.
+   Apply this class to Markdown-generated divs or custom components. */
+.glassmorphic-box {
+  background: rgba(30, 30, 40, 0.6); /* Darker semi-transparent background */
+  backdrop-filter: blur(10px) saturate(150%); /* Saturate for more vivid background colors */
+  -webkit-backdrop-filter: blur(10px) saturate(150%); /* Safari support */
+  border-radius: 12px;
+  border: 1px solid rgba(200, 200, 220, 0.2); /* Lighter border for contrast */
+  padding: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* More pronounced shadow */
+}
+
+/* Style the call-out boxes (from Markdown `div.p-3/p-4`) with a subtle glassmorphic touch or neon border */
+div[class*="bg-cyan-900"],
+div[class*="bg-purple-900"],
+div[class*="bg-yellow-800"],
+div[class*="bg-sky-800"],
+div[class*="bg-emerald-800"],
+div[class*="bg-purple-800"], /* This was duplicated, ensure correct one from slides */
+div[class*="bg-red-800"],
+div[class*="bg-teal-800"],
+div[class*="bg-orange-800"],
+div[class*="bg-lime-800"],
+div[class*="bg-pink-800"],
+div[class*="bg-red-700"] { /* Added from CPU Cache Warming slide */
+  /* background: rgba(40, 40, 50, 0.5); /* Example: override markdown utility class if needed */
+  /* backdrop-filter: blur(5px); */
+  /* border-left: 3px solid var(--neon-cyan); /* Example neon accent */
+  /* padding: 1em; */
+  /* border-radius: 8px; */
+  /* margin-top: 1em; */
+  /* margin-bottom: 1em; */
+}
+
+
+/* --- Gradient Backgrounds & Particle Effects --- */
+/* Gradient backgrounds can be applied to .slidev-layout or specific slides via frontmatter or classes. */
+/* Example for a specific slide layout if you define one:
+.slidev-layout.section-title-slide {
+  background-image: linear-gradient(135deg, #230c29 0%, #0d1a26 100%);
+}
+*/
+
+/* Particle effects would likely require a JS library (e.g., particles.js, tsParticles)
+   and custom Vue component integration. This is a placeholder for styles if such a component is used. */
+/*
+.particle-background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensure it's behind content */
+}
+*/
+
+/* --- Code Block Styling --- */
+/* Ensure Prism theme selected (e.g., 'prism' or 'shiki' in frontmatter)
+   provides good contrast with the dark theme. If not, override. */
+/*
+pre[class*="language-"] {
+  background-color: #1e1e1e; /* Darker background for code blocks */
+  color: #d4d4d4; /* Light text for code */
+  border-radius: 8px;
+  padding: 1em;
+  overflow-x: auto;
+}
+.token.operator, .token.entity, .token.url, .language-css .token.string, .style .token.string {
+  background: none; /* Remove default Prism background for these tokens if any */
+}
+*/
+
+/* --- Animations & Transitions --- */
+/* Slidev handles slide transitions (e.g., `transition: slide-left`).
+   Custom animations for elements can be done with Vue transitions or CSS animations. */
+/*
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-enter-active, .slide-leave-active {
+  transition: transform 0.3s ease-out;
+}
+*/
+
+/* --- General Readability & Typography --- */
+/* body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, readable font stack */
+}
+
+/* Ensure links are visible and have a neon touch if desired */
+/* a {
+  color: var(--neon-blue);
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+a:hover {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 8px var(--neon-cyan);
+} */
+
+/* --- Specific Slide Element Styling --- */
+/* Example: Styling the presenter introduction block on the title slide */
+/* .presenter-intro {
+  margin-top: 2em;
+  font-size: 0.9em;
+}
+.presenter-intro .text-2xl { color: var(--neon-green); }
+*/
