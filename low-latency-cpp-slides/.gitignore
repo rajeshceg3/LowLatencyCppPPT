@@ -1,0 +1,21 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Slidev
+dist/
+.DS_Store
+*.local
+
+# Optional: Vim swap files
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
+
+# Optional: VSCode settings
+.vscode/
