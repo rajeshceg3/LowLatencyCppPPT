@@ -83,12 +83,7 @@ layout: center
 class: "text-center"
 ---
 
-<!-- TODO: Meme Placeholder -->
-<div class="mx-auto my-8 p-4 border border-dashed border-gray-400 rounded-lg text-gray-500">
-  <p class="text-lg">🤣 Meme Area 🤣</p>
-  <p>"When your code takes 1ms longer than expected..."</p>
-  <p>(Imagine a funny programming meme here!)</p>
-</div>
+![Placeholder Meme Latency Reaction](/placeholders/meme_latency_reaction.png)
 
 ---
 layout: default
@@ -221,9 +216,7 @@ Designing data structures to leverage CPU caches is crucial for performance. Thi
   - **SoA:** `struct { float x[N], y[N], z[N]; } points;`
     - Good if you usually process one field across all points (e.g., `sum_all_x_coordinates()`). This is often better for SIMD operations.
 
-  ```md
-  <!-- TODO: Add diagram illustrating AoS vs SoA memory layout -->
-  ```
+![Placeholder Diagram AoS vs SoA](/placeholders/diagram_AoS_vs_SoA.png)
   AoS: [P1.x, P1.y, P1.z, P2.x, P2.y, P2.z, ...]
   SoA: [P1.x, P2.x, ..., Pn.x,  P1.y, P2.y, ..., Pn.y, ...]
 
@@ -283,12 +276,7 @@ class: "text-center"
 
 ## Memory Management Humor 🤣
 
-<!-- TODO: Meme Placeholder -->
-<div class="mx-auto my-8 p-4 border border-dashed border-gray-400 rounded-lg text-gray-500">
-  <p class="text-lg">🧠 Meme Area 🧠</p>
-  <p>"Stack allocation vs. malloc() entering the arena"</p>
-  <p>(Imagine a meme: Stack is a nimble ninja, malloc() is a slow, clunky robot)</p>
-</div>
+![Placeholder Meme Stack vs Malloc](/placeholders/meme_stack_vs_malloc.png)
 
 ---
 layout: default
@@ -335,10 +323,7 @@ Disk SSD:         ~15-100 µs (microseconds!)
 Disk HDD:         ~2-10 ms (milliseconds!)
 ```
 
-```md
-<!-- TODO: Add diagram of CPU Cache Hierarchy (L1, L2, L3, RAM) -->
-<!-- Visual: CPU core with tiny L1, slightly larger L2, then larger L3, then big RAM box -->
-```
+![Placeholder Diagram CPU Cache Hierarchy](/placeholders/diagram_cpu_cache_hierarchy.png)
 <br>
 <div class="p-3 bg-teal-800 bg-opacity-30 border border-teal-600 rounded-md">
 💡 **Insight:** A cache miss to main memory can cost hundreds of clock cycles, during which the CPU might stall or do less useful work.
@@ -395,10 +380,7 @@ Instruction pipelining is like an assembly line where different stages of multip
 
 **Compiler's Role:** Compilers try to schedule instructions in an order that minimizes pipeline stalls.
 
-```md
-<!-- TODO: Add diagram of a simple instruction pipeline -->
-<!-- Visual: Stages [Fetch|Decode|Execute|Write] with instructions moving through them -->
-```
+![Placeholder Diagram Instruction Pipeline](/placeholders/diagram_instruction_pipeline.png)
 <br>
 <div class="p-3 bg-lime-800 bg-opacity-30 border border-lime-600 rounded-md">
 🚀 **Goal:** Keep the pipeline full and flowing! Understanding hazards helps appreciate why some code sequences are faster than others.
@@ -440,10 +422,7 @@ SIMD allows a single instruction to perform the same operation on multiple data 
     ```
 3.  **Assembly Language:** For ultimate control (rarely needed).
 
-```md
-<!-- TODO: Add conceptual diagram of SIMD operation -->
-<!-- Visual: [A1,A2,A3,A4] + [B1,B2,B3,B4] => [R1,R2,R3,R4] in one go -->
-```
+![Placeholder Diagram SIMD Operation](/placeholders/diagram_simd_operation.png)
 <br>
 <div class="p-3 bg-pink-800 bg-opacity-30 border border-pink-600 rounded-md">
 ✨ **Key:** Identify loops or operations where the same computation is repeated over arrays/vectors of data. These are prime candidates for SIMD!
@@ -606,12 +585,7 @@ class: "text-center"
 
 ## Lock-Free Wisdom 🤣
 
-<!-- TODO: Meme Placeholder -->
-<div class="mx-auto my-8 p-4 border border-dashed border-gray-400 rounded-lg text-gray-500">
-  <p class="text-lg">🔓 Meme Area 🔓</p>
-  <p>"My face when I fix one ABA problem and two more appear."</p>
-  <p>(Imagine a stressed programmer meme here!)</p>
-</div>
+![Placeholder Meme ABA Problem](/placeholders/meme_aba_problem.png)
 
 ---
 layout: default
@@ -1301,6 +1275,7 @@ While profilers show where time is spent overall, microbenchmarks help measure t
   - **Conceptual Google Benchmark Snippet:**
     ```cpp
     #include <benchmark/benchmark.h> // Typically included in your benchmark .cpp file
+    #include <string>                // Required for std::string in BM_StringCreation
 
     // Function to test
     void MyFunctionToTest() {
@@ -1327,10 +1302,12 @@ While profilers show where time is spent overall, microbenchmarks help measure t
     }
     BENCHMARK(BM_StringCreation);
 
-    // It's common to put BENCHMARK_MAIN() in its own file or at the end
-    // BENCHMARK_MAIN(); // If you want this file to be the main for benchmarks
+    // BENCHMARK_MAIN();
+    // Note: BENCHMARK_MAIN() is usually placed in a separate .cpp file
+    // or at the end of this file if it's the only benchmark file.
+    // It defines the main() function for the benchmark executable.
     ```
-    *(Note: To compile, you'd link against the Google Benchmark library.)*
+    *(Note: To compile this, you'd link against the Google Benchmark library, e.g., `g++ benchmark_file.cpp -lbenchmark -lpthread`)*
 
 <br>
 <div class="p-3 bg-teal-800 bg-opacity-30 border border-teal-600 rounded-md">
@@ -1350,12 +1327,7 @@ Collecting data is just the first step. Understanding it is key.
   - The width of a bar represents the total time spent in that function (and its children).
   - The y-axis represents the call stack depth.
   - Excellent for quickly identifying broad hotspots in complex applications.
-  ```md
-  <!-- TODO: Add example of a small flame graph or link to an example -->
-  <!-- Visual: A typical flame graph image (can be a simplified one) -->
-  <!-- Example: [https://www.brendangregg.com/FlameGraphs/cpuflamegraphs.html] -->
-  ```
-  *(Imagine a wide, blocky chart with function names, wider blocks indicate more time spent)*
+![Placeholder Flame Graph](/placeholders/diagram_flame_graph.png)
 
 - **Call Tree Analysis:**
   - Shows caller-callee relationships and how time (or other metrics) is distributed.
@@ -1900,13 +1872,16 @@ Test your skills! How would you optimize the following C++ snippets? What are th
 
 **Challenge 1: Bottlenecked Object Processing Function**
 ```cpp
-#include <vector> // Assume MyObject is defined elsewhere
+#include <vector> // For std::vector
+
+// // Assume MyObject is defined elsewhere, e.g.:
 // struct MyObject {
-//   bool is_valid() const;
-//   void transform();
-//   MyObject(); // Default constructor
-//   MyObject(const MyObject&); // Copy constructor (potentially expensive)
-//   MyObject(MyObject&&);      // Move constructor (potentially cheaper)
+//   bool is_valid() const { /* ... */ return true; }
+//   void transform() { /* ... */ }
+//   MyObject() { /* ... */ } // Default constructor
+//   MyObject(const MyObject&) { /* Potentially expensive copy ... */ }
+//   MyObject(MyObject&&) noexcept { /* Potentially cheaper move ... */ }
+//   // ... other members ...
 // };
 
 // Challenge: Optimize this function. What are the bottlenecks?
@@ -1948,12 +1923,26 @@ layout: default
 #include <thread> // For conceptual discussion
 
 struct Counters {
-  std::atomic<long> counterA; // Thread 1 updates this
-  // char padding[60]; // Potential fix: Add padding to separate cache lines
-  std::atomic<long> counterB; // Thread 2 updates this
+  // Assume a common cache line size, e.g., 64 bytes.
+  // On C++17 and later, std::hardware_destructive_interference_size can provide this.
+  // struct alignas(64) AlignedCounter { // Option 1: Align the whole struct or individual members
+  //   std::atomic<long> value;
+  // };
+  // AlignedCounter counterA;
+  // AlignedCounter counterB;
+
+  std::atomic<long> counterA; // Thread 1 updates this frequently
+  // Potential fix 1: Add padding to ensure counterB is on a different cache line.
+  // The exact size depends on sizeof(std::atomic<long>) and cache line size.
+  // E.g., if std::atomic<long> is 8 bytes and cache line is 64 bytes:
+  // char padding[56]; // So counterB starts on a new 64-byte boundary.
+  // Or better, use alignas for counterB if not aligning the whole struct:
+  // alignas(64) std::atomic<long> counterB; // Option 2: Align specific members
+
+  std::atomic<long> counterB; // Thread 2 updates this frequently
 };
-// If sizeof(std::atomic<long>) is 8 bytes, and a cache line is 64 bytes,
-// counterA and counterB could easily be on the SAME cache line.
+// Explanation: If sizeof(std::atomic<long>) is, for example, 8 bytes, and a common cache line size is 64 bytes,
+// counterA and counterB (if not padded/aligned) could reside on the SAME cache line.
 
 // Thread 1:
 //   loop { counters.counterA++; }
@@ -1964,10 +1953,12 @@ struct Counters {
 
 *(Presenter Note: Explain false sharing:*
 *   *CPU caches operate on cache lines (e.g., 64 bytes).
-*   *If `counterA` and `counterB` are close enough in memory to fall on the same cache line, an update to `counterA` by Thread 1 will invalidate that cache line in Thread 2's cache (and vice-versa).
-*   *This forces Thread 2 to re-fetch the cache line from a higher-level cache or main memory, even though `counterB` wasn't actually modified by Thread 1. This is "false" sharing.
-*   *Solution: Ensure `counterA` and `counterB` are on different cache lines. This can be done by adding padding between them or using `alignas` (C++11) to align each counter to a cache line boundary (e.g., `alignas(64) std::atomic<long> counterA;`).*
-*   `#include <new>` for `std::hardware_destructive_interference_size` (C++17) can provide cache line size.)*
+*   *If `counterA` and `counterB` are close enough in memory to fall on the same cache line (e.g., `counterA` at address 0x100, `counterB` at 0x108, both on cache line starting 0x100), an update to `counterA` by Thread 1 will invalidate that cache line in Thread 2's cache (and vice-versa for updates to `counterB` by Thread 2).
+*   *This forces the other thread to re-fetch the cache line from a higher-level cache or main memory, even though the specific atomic variable it cares about wasn't modified by the other thread. This is "false" sharing.
+*   *Solution: Ensure `counterA` and `counterB` are on different cache lines.
+    1.  **Padding:** Add manual padding (e.g., `char padding[...]`) between `counterA` and `counterB`.
+    2.  **`alignas` (C++11):** Use `alignas` on members (e.g., `alignas(64) std::atomic<long> counterB;`) or on a wrapper struct.
+*   *C++17 provides `std::hardware_destructive_interference_size` (usually in `<new>`) which gives a good estimate for cache line size for alignment purposes.)*
 
 ---
 layout: default
@@ -2183,7 +2174,6 @@ The C++ standard committee (WG21) continues to introduce features that can aid i
 <div class="p-3 bg-sky-700 bg-opacity-30 border border-sky-500 rounded-md">
 The C++ standard continues to prioritize performance and low-level control, providing developers with better tools to write efficient code.
 <br>
-<!-- TODO: Add a link to the latest C++ status page or a relevant WG21 paper -->
 *Stay updated: [isocpp.org](https://isocpp.org/std/status) or specific WG21 study group papers.*
 </div>
 
@@ -2495,8 +2485,7 @@ layout: default
 
 All code examples, the presentation source (`slides.md`), custom styles, and further resources can be found at:
 
-**[Link to Your GitHub Repository Here]**
-`<!-- TODO: Create a GitHub repository and replace this with the actual link! -->`
+**[https://github.com/your-username/low-latency-cpp-slides-placeholder]**
 <br>
 Example: `https://github.com/your-username/low-latency-cpp-slides`
 
@@ -2506,7 +2495,6 @@ Example: `https://github.com/your-username/low-latency-cpp-slides`
 -   Runnable C++ code snippets for examples and benchmarks (where applicable).
 -   Links to external resources, tools, and further reading.
 -   Printable reference sheets summarizing key techniques and best practices (available in a `/references` or `/extras` folder in the repo).
-   `<!-- TODO: Create these reference sheets (e.g., in Markdown or PDF) and add them to the repo. -->`
 
 <!--
 Speaker Note: Emphasize that the GitHub repo is the go-to place for all materials.
@@ -2528,7 +2516,6 @@ For quick reference, a set of printable sheets summarizing key information will 
 -   **Common Pitfalls & Anti-Patterns:** What to watch out for.
 
 Look for these in the `/references` or `/extras` directory of the GitHub repository.
-`<!-- TODO: Create these reference sheets (e.g., in Markdown or PDF) and add them to the repo. -->`
 
 <!--
 Speaker Note: Briefly mention these sheets as a handy takeaway found in the GitHub repo.
