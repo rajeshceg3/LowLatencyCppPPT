@@ -13,8 +13,9 @@ Ensure you have Node.js and npm installed.
     git clone <repository_url>
     cd <repository_directory>
     ```
-2.  Install dependencies:
+2.  Change into the Slidev project directory and install dependencies:
     ```bash
+    cd low-latency-cpp-slides
     npm install
     ```
 
@@ -43,9 +44,9 @@ This will generate a PDF file in the `dist/` directory (e.g., `slides-export.pdf
 
 ## Project Structure
 
--   `slides.md`: The main content of the presentation in Markdown format.
--   `package.json`: Project metadata and dependencies.
--   `styles/`: Custom CSS styles for the presentation.
--   `public/`: Static assets (images, etc.) that can be referenced in `slides.md`.
+-   `low-latency-cpp-slides/slides.md`: The main content of the presentation in Markdown format.
+-   `low-latency-cpp-slides/package.json`: Project metadata and dependencies.
+-   `low-latency-cpp-slides/styles/`: Custom CSS styles for the presentation.
+-   `low-latency-cpp-slides/public/`: Static assets (images, etc.) referenced from `slides.md` as `/placeholders/...`. Slidev serves `public/` from the project directory, so this folder must stay inside `low-latency-cpp-slides/` for the images to resolve.
 
 Replace `<repository_url>` and `<repository_directory>` with the actual URL and directory name when cloning.
