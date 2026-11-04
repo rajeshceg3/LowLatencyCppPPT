@@ -29,7 +29,15 @@ try{
   const head=parts[1];
   if(!/^theme:/m.test(head))fail('headmatter','headmatter has no theme key');
   if(!/^title:/m.test(head))fail('headmatter','headmatter has no title key');
-  ok('headmatter','theme and title present');
+  // Slide 1's config must live in the headmatter itself: a pure-config part right
+  // after the headmatter renders as literal text, and an empty part renders a blank first slide.
+  {
+    const first=parts[2].split('\n').filter(l=>l.trim()!=='');
+    if(first.length&&first.every(l=>/^[\w-]+:/.test(l)||l.trim().startsWith('#')))
+      fail('headmatter','slide 1 config sits in its own part after the headmatter; Slidev renders it as literal text - move it into the headmatter frontmatter');
+    if(!first.length)fail('headmatter','empty part after the headmatter renders a blank first slide');
+  }
+  ok('headmatter','theme and title present, slide 1 config in headmatter');
   // 4. slide structure: per-slide config lines must sit in frontmatter position, not after content
   const cfg=/^(layout|class|background|transition|style|favicon|download|mdc|level):/;
   const yamlLine=/^[\w-]+:/;

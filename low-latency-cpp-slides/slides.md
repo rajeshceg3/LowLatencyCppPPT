@@ -9,14 +9,7 @@ transition: slide-left
 mdc: true
 title: 'Low Latency C++ Techniques' # Add a title for the presentation
 # Add any further global settings or theme configurations here if needed
----
-
----
 layout: cover
-# You might need to add specific classes for styling if 'cover' doesn't achieve the desired effect
-# class: "flex flex-col items-center justify-center text-center"
-# You can also add background images directly here if simple enough:
-# background: '/assets/speed-background.jpg' # Example
 ---
 
 # Low Latency C++ Techniques 🚀
