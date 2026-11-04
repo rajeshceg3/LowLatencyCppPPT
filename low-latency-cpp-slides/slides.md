@@ -1,6 +1,6 @@
 ---
 theme: 'seriph'
-highlighter: 'prism'
+highlighter: 'shiki'
 lineNumbers: true
 drawings:
   enabled: true

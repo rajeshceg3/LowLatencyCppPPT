@@ -6,12 +6,12 @@
    These are examples if further customization is needed. */
 /*
 body, .slidev-layout {
-  background-color: #121212; /* A common very dark background */
-  color: #e0e0e0;           /* Light text for dark background */
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #f5f5f5; /* Slightly brighter for headers */
+  color: #f5f5f5;
 }
 */
 
@@ -42,9 +42,9 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 0 10px var(--neon-purple);
 }
 
-h1, h2 { /* Potentially apply a default neon accent to main headers, e.g., bottom border */
-  /* border-bottom: 2px solid var(--neon-cyan); */
-  /* padding-bottom: 0.3em; */
+h1, h2 { Potentially apply a default neon accent to main headers, e.g., bottom border
+  border-bottom: 2px solid var(--neon-cyan);
+  padding-bottom: 0.3em;
 }
 */
 
@@ -101,7 +101,7 @@ div[class*="bg-red-700"] { /* Added from CPU Cache Warming slide */
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Ensure it's behind content */
+  z-index: -1; Ensure it's behind content
 }
 */
 
@@ -110,14 +110,14 @@ div[class*="bg-red-700"] { /* Added from CPU Cache Warming slide */
    provides good contrast with the dark theme. If not, override. */
 /*
 pre[class*="language-"] {
-  background-color: #1e1e1e; /* Darker background for code blocks */
-  color: #d4d4d4; /* Light text for code */
+  background-color: #1e1e1e;
+  color: #d4d4d4;
   border-radius: 8px;
   padding: 1em;
   overflow-x: auto;
 }
 .token.operator, .token.entity, .token.url, .language-css .token.string, .style .token.string {
-  background: none; /* Remove default Prism background for these tokens if any */
+  background: none; Remove default Prism background for these tokens if any
 }
 */
 
@@ -140,7 +140,7 @@ pre[class*="language-"] {
 
 /* --- General Readability & Typography --- */
 /* body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, readable font stack */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; Modern, readable font stack
 }
 
 /* Ensure links are visible and have a neon touch if desired */
