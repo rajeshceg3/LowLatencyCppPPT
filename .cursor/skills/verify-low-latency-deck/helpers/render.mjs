@@ -17,7 +17,7 @@ try {
  const proof={screenshots:[],navigation:null,visualReview:'requires full-size human inspection; screenshots alone are not a visual pass'};
  for(const slide of [1, 4]){
   await page.goto(new URL(String(slide),base.endsWith('/')?base:base+'/').href,{waitUntil:'networkidle'});
-  await page.keyboard.press('Escape');await page.evaluate(async()=>{await document.fonts.load('400 32px "Noto Emoji"','🚀⚡');await document.fonts.ready;});await page.waitForTimeout(600);
+  await page.keyboard.press('Escape');await page.evaluate(async()=>{await document.fonts.load('400 32px "Deck Emoji"','🚀⚡');await document.fonts.ready;});await page.waitForTimeout(600);
   assert(await page.locator('.slidev-layout').count()>0,'slide layout missing');
   await page.screenshot({path:path.join(out,`slide-${slide}.png`)});proof.screenshots.push(slide);
  }
@@ -26,6 +26,7 @@ try {
  const results=page.locator('#slidev-goto-dialog li');assert.equal(await results.count(),0,'closed Goto overlays slides');
  await page.keyboard.press('g');const input=page.locator('#slidev-goto-input');await input.waitFor();assert(await input.isEnabled());
  await input.fill('2');await page.waitForTimeout(200);assert(await results.count()>0,'Goto search is broken');
+ assert((await page.locator('#slidev-goto-dialog').evaluate(el=>getComputedStyle(el).fontFamily)).includes('Noto Emoji'),'Goto emoji fallback missing');
  await page.screenshot({path:path.join(out,'goto-open.png')});await input.press('Enter');await page.waitForTimeout(300);
  assert.equal(new URL(page.url()).pathname,'/2');assert.equal(await results.count(),0);proof.navigation='closed/open/search/select/closed passed';
  fs.writeFileSync(path.join(out,'runtime.json'),JSON.stringify(proof,null,2)+'\n');console.log(JSON.stringify(proof,null,2));
