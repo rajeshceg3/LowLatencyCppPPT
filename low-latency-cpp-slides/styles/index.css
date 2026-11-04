@@ -1,3 +1,5 @@
+@import "@fontsource/noto-emoji/400.css";
+
 /* styles/index.css */
 
 /* --- Theme Overrides & Base Styling --- */
@@ -162,3 +164,6 @@ a:hover {
 }
 .presenter-intro .text-2xl { color: var(--neon-green); }
 */
+
+/* Bundle emoji glyphs so slides do not depend on the viewer OS fonts. */
+.slidev-layout { font-family: "Roboto", "Noto Emoji", ui-sans-serif, system-ui, sans-serif; }

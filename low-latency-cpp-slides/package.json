@@ -15,6 +15,13 @@
   "devDependencies": {
     "@slidev/cli": "^51.8.1",
     "@slidev/theme-seriph": "^0.25.0",
+    "playwright-chromium": "1.64.1",
     "slidev-addon-components": "^0.0.1"
+  },
+  "overrides": {
+    "fuse.js": "7.1.0"
+  },
+  "dependencies": {
+    "@fontsource/noto-emoji": "5.3.2"
   }
 }

@@ -1,5 +1,6 @@
 ---
 theme: 'seriph'
+colorSchema: dark
 highlighter: 'shiki'
 lineNumbers: true
 drawings:

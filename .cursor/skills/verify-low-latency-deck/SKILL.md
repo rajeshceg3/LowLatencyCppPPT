@@ -42,3 +42,9 @@ The helper starts no processes, servers or scratch state, so there is nothing to
 ## Helpers
 
 `node .cursor/skills/verify-low-latency-deck/helpers/drive.mjs` - full static journey, exits non-zero on failure. To update this map after deck behavior changes, use `/maintain-verification-skill`; never weaken a check to bless a regression.
+
+## Rendered regression path
+
+After building, serve the production `dist/` directory with SPA fallback. From the repository root run `DECK_URL=http://localhost:PORT node .cursor/skills/verify-low-latency-deck/helpers/render.mjs`. This saves full-size 1280x720 images and runtime evidence under `artifacts/verification/rendered/`. Inspect every saved image individually for clipping, overflow, contrast and missing glyphs. A passing runtime check is not a visual pass.
+
+The static drive also checks the bundled emoji fallback. The C++ decks pin Fuse 7.1.0 because later empty-query semantics expose Slidev's closed Goto results; their rendered drive verifies closed/open/search/select/closed, not a CSS-hidden workaround.
